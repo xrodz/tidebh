@@ -5,6 +5,7 @@ var getToday = function () {
 		date = today.day;
 	if (month < 10) month = "0" + month;
 	if (date < 10) date = "0" + date;
+	console.log(year, month, date);
 	return "" + year + month + date;
 }
 
