@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<meta http-equiv="refresh" content="60">
+
+	<title>TideBH</title>
+
+	<!-- ****** progressive web application ****** -->
+	<meta name="application-name" content="TideBH">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-title" content="TideBH">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="msapplication-navbutton-color" content="#333333">
+	<meta name="msapplication-starturl" content="/">
+
+	<!-- ****** faviconit.com favicons ****** -->
+	<link rel="shortcut icon" href="favicon/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="favicon/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="favicon/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="favicon/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="favicon/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16.png">
+	<link rel="apple-touch-icon" href="favicon/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="favicon/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="favicon/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="favicon/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="favicon/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="favicon/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="favicon/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="favicon/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="favicon/favicon-144.png">
+	<meta name="msapplication-config" content="favicon/browserconfig.xml">
+
+	<!-- ****** splashscreens ****** -->
+	<link href="splashscreens/iphone5_splash.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+	<link href="splashscreens/iphone6_splash.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+	<link href="splashscreens/iphoneplus_splash.png" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+	<link href="splashscreens/iphonex_splash.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+	<link href="splashscreens/iphonexr_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+	<link href="splashscreens/iphonexsmax_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+	<link href="splashscreens/ipad_splash.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+	<link href="splashscreens/ipadpro1_splash.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+	<link href="splashscreens/ipadpro3_splash.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+	<link href="splashscreens/ipadpro2_splash.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+
+	<!-- ****** javascripts ****** -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="js/moment.js"></script>
+	<script src="js/station1.js"></script>
+	<script src="js/station2.js"></script>
+
+	<!-- ****** css ****** -->
+	<style>
+		@media (prefers-color-scheme: dark) {
+  		body {
+    		background-color: #212121;
+    		color: white;
+  		}
+			a:link {
+  			color: #2e96d3;
+			}
+			a:visited {
+  			color: #2e96d3;
+			}
+			.dark {
+				display: initial !important;
+			}
+			.light {
+				display: none;
+			}
+		}
+		@media (prefers-color-scheme: light) {
+  		body {
+    		background-color: white;
+    		color: black;
+  		}
+			a:link {
+  			color: #2072a6;
+			}
+			a:visited {
+  			color: #2072a6;
+			}
+			.dark {
+				display: none;
+			}
+			.light {
+				display: initial !important;
+			}
+		}
+		.always {
+			display: initial !important;
+		}
+		.header {
+  		overflow: hidden;
+  		background-color: #32527b;
+			color: #ffffff;
+  		position: fixed; /* Set the navbar to fixed position */
+  		top: 0; /* Position the navbar at the top of the page */
+  		width: 100%; /* Full width */
+			margin-left: -8px;
+			padding-top: calc(env(safe-area-inset-top) - 10px);
+
+		}
+		.header_table {
+			border: none;
+			padding: 0;
+		}
+		body {
+			font-size: 1.7vh;
+			font-family: Verdana;
+			text-align: center;
+		}
+		table, tr, th, td {
+			border-bottom: 1px solid #C0C0C0;
+		}
+		table {
+			border-collapse: collapse;
+		}
+		th, td {
+			padding: .5rem;
+		}
+		td {
+			text-align: center;
+		}
+	</style>
+</head>
+
+
+
+<body>
+	<div class="header">
+	<table align="center" class="header_table">
+		<thead>
+			<tr class="header_table">
+				<th class="header_table">
+					<a href=""><img class="always" src="images/BH logo - dark bkg color wave.png" style="width: 100%;max-width: 280px;height: auto;display: none;"></a>
+				</th>
+				<th  class="header_table" style="text-align: left;">
+					<p style="font-size: 2.5vh;font-weight: bold;margin: 10px 0 10px 0;">TIDE PREDICTION SERVICE
+						<br><span id="current-date" style="font-size: 2vh;font-weight: normal;"></span>
+					</p>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+
+		</tbody>
+	</table>
+	</div>
+
+	<p style="font-size: 3vh;font-weight: bold;margin: 150px 0 40px 0;padding-top: calc(env(safe-area-inset-top) - 10px);">Current Surge
+		<br><span id="current-surge" style="font-size: 5vh;"></span><span style="font-weight: normal;">ft</span>
+		<br><span style="font-size: 1.7vh;font-weight: normal;font-style: italic">(source: NOAA Station# <a href="https://tidesandcurrents.noaa.gov/waterlevels.html?id=8722670&timezone=LST/LDT" target="_blank">8722670</a>)</span>
+	</p>
+
+	<div id="station1">
+		<p style="font-size: 3vh;font-weight: bold;margin-bottom: 10px;">MARINA TIDE STATION 1
+			<br><span style="font-size: 2.2vh;font-weight: normal;">Lake Worth ICW (Avg Error: 0.1ft)</span>
+		</p>
+		<table align="center">
+			<thead>
+				<tr style="background-color: #32527b;color: #ffffff">
+					<th style="width: 15%;">Time</th>
+					<th style="width: 10%;">Type</th>
+					<th style="width: 10%;">Tide<br>(ft)</th>
+					<th style="width: 10%;">Water<br>Level<br>(ft)</th>
+			<tbody>
+
+			</tbody>
+		</table>
+		<p style="font-size: 1.7vh;font-weight: normal;font-style: italic">(source: NOAA Station# <a id="url_station1" target="_blank">8722669</a>)</p>
+	</div>
+
+	<br>
+	<br>
+
+	<div id="station2">
+		<p style="font-size: 3vh;font-weight: bold;margin-bottom: 10px;">MARINA TIDE STATION 2
+			<br><span style="font-size: 2.2vh;font-weight: normal;">Lake Wyman (Avg Error: 0.4ft)</span>
+		</p>
+		<table align="center">
+			<thead>
+				<tr style="background-color: #2072a6;color: #ffffff">
+					<th style="width: 15%;">Time</th>
+					<th style="width: 10%;">Type</th>
+					<th style="width: 10%;">Tide<br>(ft)</th>
+					<th style="width: 10%;">Water<br>Level<br>(ft)</th>
+				</tr>
+			</thead>
+			<tbody>
+
+			</tbody>
+		</table>
+		<p style="font-size: 1.7vh;font-weight: normal;font-style: italic">(source: NOAA Station# <a href="https://tidesandcurrents.noaa.gov/noaatidepredictions.html?id=8722802&units=standard&timezone=LST/LDT&clock=12hour&datum=MLLW&action=dailychart" target="_blank">8722802</a>)</p>
+	</div>
+
+	<br>
+	<br>
+	<br>
+
+	<hr>
+		<p style="font-size: 1.7vh;font-weight: normal;font-style: italic">© 2019: developed by Rodrigo Griesi</p>
+
+	<br>
+</body>
+
+</html>
