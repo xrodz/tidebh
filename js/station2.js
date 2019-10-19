@@ -105,7 +105,7 @@
 											if (p.current) {
 												htmlString +=
 												'<tr style="font-weight: bold;background-color: #2e96d3;color: #ffffff;">' +
-												 '<td>' + moment(p.t).format("h:mm<br>a") + '</td>' +
+												 '<td>' + moment(p.t).format("h:mm a") + '</td>' +
 												 '<td>NOW</td>' +
 												 '<td>' + Number(p.d).toFixed(1) + '</td>' +
 												 '<td>' + Number(p.v).toFixed(1) + '</td>' +
