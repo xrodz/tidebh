@@ -5,4 +5,5 @@ TideBH is an app that retrieves the Current Surge from the NOAA real-time tide s
 Surge is the water level difference from predictions calculated by the moon and sun positions. Those differences can occur by wind push, currents, water dumping, etc and they change the water levels comparing to the original harmonic predictions.
 
 Enjoy!
+
 xrodz
