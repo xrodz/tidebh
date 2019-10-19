@@ -1,6 +1,6 @@
 - finish development, save files @coda
-- test @browers @devices
+- test @browsers @devices
 - commit @gitHUB
 - create release + notes @gitHUB
-- test release @sandbox (@browers @devices)
+- test release @sandbox (@browsers @devices)
 - deploy
