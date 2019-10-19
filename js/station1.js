@@ -102,6 +102,7 @@
 
 										$('#current-surge').text((currentSurge).toFixed(1));
 										$('#current-date').text(moment(currentTime).format("ddd, MMM Do, YYYY"));
+										$('#current-year').text(moment(currentTime).format("YYYY"));
 
 										var url_station_link1 = "https://tidesandcurrents.noaa.gov/noaatidepredictions.html?id=8722669&units=standard&timezone=LST/LDT&clock=12hour&datum=MLLW&action=dailychart&bdate=<<FIRST_DAY>>&edate=<<LAST_DAY>>";
 										var date = new Date(), y = date.getFullYear(), m = date.getMonth();
