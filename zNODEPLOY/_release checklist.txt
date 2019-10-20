@@ -9,6 +9,7 @@ RELEASE
 - test release @sandbox (@browsers @devices)
 
 DEPLOY
+- get latest version files
 - create new version folder @server (FTP @coda or @transmit)
 - remove oldest version folder
 - copy release files
