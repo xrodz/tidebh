@@ -7,7 +7,7 @@
 
 	<title>TideBH</title>
 
-	<!-- ****** progressive web application ****** -->
+<!-- ****** progressive web application ****** -->
 	<meta name="application-name" content="TideBH">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
@@ -16,7 +16,7 @@
 	<meta name="msapplication-navbutton-color" content="#333333">
 	<meta name="msapplication-starturl" content="/">
 
-	<!-- ****** faviconit.com favicons ****** -->
+<!-- ****** faviconit.com favicons ****** -->
 	<link rel="shortcut icon" href="favicon/favicon.ico">
 	<link rel="icon" sizes="16x16 32x32 64x64" href="favicon/favicon.ico">
 	<link rel="icon" type="image/png" sizes="196x196" href="favicon/favicon-192.png">
@@ -38,7 +38,7 @@
 	<meta name="msapplication-TileImage" content="favicon/favicon-144.png">
 	<meta name="msapplication-config" content="favicon/browserconfig.xml">
 
-	<!-- ****** splashscreens ****** -->
+<!-- ****** splashscreens ****** -->
 	<link href="splashscreens/iphone5_splash.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
 	<link href="splashscreens/iphone6_splash.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
 	<link href="splashscreens/iphoneplus_splash.png" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
@@ -50,13 +50,13 @@
 	<link href="splashscreens/ipadpro3_splash.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
 	<link href="splashscreens/ipadpro2_splash.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
 
-	<!-- ****** javascripts ****** -->
+<!-- ****** javascripts ****** -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="js/moment.js"></script>
 	<script src="js/station1.js"></script>
 	<script src="js/station2.js"></script>
 
-	<!-- ****** css ****** -->
+<!-- ****** css ****** -->
 	<style>
 		@media (prefers-color-scheme: dark) {
   		body {
@@ -135,6 +135,8 @@
 
 
 <body>
+	
+<!-- ****** header ****** -->
 	<div class="header">
 	<table align="center" class="header_table">
 		<thead>
@@ -155,14 +157,18 @@
 	</table>
 	</div>
 
+
+<!-- ****** surge ****** -->
 	<p style="font-size: 3vh;font-weight: bold;margin: 150px 0 40px 0;padding-top: calc(env(safe-area-inset-top) - 10px);">Current Surge
 		<br><span id="current-surge" style="font-size: 5vh;"></span><span style="font-weight: normal;">ft</span>
 		<br><span style="font-size: 1.7vh;font-weight: normal;font-style: italic">(source: NOAA Station# <a href="https://tidesandcurrents.noaa.gov/waterlevels.html?id=8722670&timezone=LST/LDT" target="_blank">8722670</a>)</span>
 	</p>
 
+
+<!-- ****** station1 ****** -->
 	<div id="station1">
 		<p style="font-size: 3vh;font-weight: bold;margin-bottom: 10px;">TIDE STATION #1
-			<br><span style="font-size: 2.2vh;font-weight: normal;">Lake Worth ICW (Error 0.1ft)</span>
+			<br><span style="font-size: 2.2vh;font-weight: normal;">Lake Worth ICW (<a href="https://docs.google.com/spreadsheets/d/1C4ZcLu-jInXRscMxP8JZBQ1bXHWmvbjCtxdGB6KHitQ" target="_blank">Error 0.1ft</a>)</span>
 		</p>
 		<table align="center">
 			<thead>
@@ -175,15 +181,16 @@
 
 			</tbody>
 		</table>
-		<p style="font-size: 1.7vh;font-weight: normal;font-style: italic">(source: NOAA Station# <a id="url_station1" target="_blank">8722669</a>)</p>
+		<p style="font-size: 1.7vh;font-weight: normal;font-style: italic">(source: NOAA Station# <a id="url_station_link" target="_blank">8722669</a>)</p>
 	</div>
-
 	<br>
 	<br>
 
+
+<!-- ****** station2 ****** -->
 	<div id="station2">
 		<p style="font-size: 3vh;font-weight: bold;margin-bottom: 10px;">TIDE STATION #2
-			<br><span style="font-size: 2.2vh;font-weight: normal;">Lake Wyman (Error 0.4ft)</span>
+			<br><span style="font-size: 2.2vh;font-weight: normal;">Lake Wyman (<a href="https://docs.google.com/spreadsheets/d/1C4ZcLu-jInXRscMxP8JZBQ1bXHWmvbjCtxdGB6KHitQ" target="_blank">Error 0.4ft</a>)</span>
 		</p>
 		<table align="center">
 			<thead>
@@ -200,18 +207,18 @@
 		</table>
 		<p style="font-size: 1.7vh;font-weight: normal;font-style: italic">(source: NOAA Station# <a href="https://tidesandcurrents.noaa.gov/noaatidepredictions.html?id=8722802&units=standard&timezone=LST/LDT&clock=12hour&datum=MLLW&action=dailychart" target="_blank">8722802</a>)</p>
 	</div>
-
 	<br>
 	<br>
 	<br>
 
+
+<!-- ****** footer ****** -->
 	<hr>
 		<p style="font-size: 1.7vh;font-weight: normal;font-style: italic">
 			developed by rodrigo griesi
 			<br>©<span id="current-year"></span> - v4.1.3
 			<br>#madeinPBC
 		</p>
-
 	<br>
 
 </body>
