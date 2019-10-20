@@ -7,4 +7,4 @@
 
 - test release @sandbox (@browsers @devices)
 
-- deploy
+- deploy (create new version folder @server > copy release files > update domain pointer)
