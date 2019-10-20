@@ -1,10 +1,15 @@
+DEVELOP
 - finish development, save files @coda
 - test @browsers @devices
 - commit @gitHUB
 
-- update version# @gitHUB
+RELEASE
+- update version# @gitHUB (index.html)
 - create release + notes @gitHUB
-
 - test release @sandbox (@browsers @devices)
 
-- deploy (create new version folder @server > copy release files > update domain pointer)
+DEPLOY
+- create new version folder @server (FTP @coda or @transmit)
+- copy release files
+- update domain pointer @godaddy
+- check DNS refresh
