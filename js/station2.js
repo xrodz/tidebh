@@ -100,6 +100,14 @@
 											return 0;
 										});
 
+										var url_station_link1 = "https://tidesandcurrents.noaa.gov/noaatidepredictions.html?id=8722802&units=standard&timezone=LST/LDT&clock=12hour&datum=MLLW&action=dailychart&bdate=<<FIRST_DAY>>&edate=<<LAST_DAY>>";
+										var date = new Date(), y = date.getFullYear(), m = date.getMonth();
+										var firstDay = moment(new Date(y, m, 1)).format("YYYYMMDD");
+										var lastDay = moment(new Date(y, m + 1, 0)).format("YYYYMMDD");
+										var url_station_link2 = url_station_link1.replace(/<<FIRST_DAY>>/g, firstDay).replace(/<<LAST_DAY>>/g, lastDay);
+										document.getElementById("url_station2_link").setAttribute("href",url_station_link2);
+
+
 										var htmlString = '';
 										predictions.forEach(function (p) {
 											if (p.current) {

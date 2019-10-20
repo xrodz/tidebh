@@ -110,7 +110,7 @@
 										var firstDay = moment(new Date(y, m, 1)).format("YYYYMMDD");
 										var lastDay = moment(new Date(y, m + 1, 0)).format("YYYYMMDD");
 										var url_station_link2 = url_station_link1.replace(/<<FIRST_DAY>>/g, firstDay).replace(/<<LAST_DAY>>/g, lastDay);
-										document.getElementById("url_station_link").setAttribute("href",url_station_link2);
+										document.getElementById("url_station1_link").setAttribute("href",url_station_link2);
 
 
 										var htmlString = '';
