@@ -12,6 +12,6 @@ DEPLOY
 - get latest version files
 - create new version folder @server (FTP @coda or @transmit)
 - remove oldest version folder
-- copy release files
+- transmit new release files
 - update domain pointer @godaddy
 - check DNS refresh
