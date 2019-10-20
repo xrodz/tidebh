@@ -4,3 +4,5 @@
 
 - readme
 You can customize this app to the location you need monitoring by changing the tide station id and name on the files: station1.js station2.js index.html.
+
+- rise and set
