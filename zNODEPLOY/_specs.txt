@@ -1,0 +1,25 @@
+1) Get variables “t.JSON_01” and “v.JSON_01” from the JSON_01 below:
+https://tidesandcurrents.noaa.gov/api/datagetter?product=water_level&application=NOS.COOPS.TAC.WL&date=latest&datum=MLLW&station=8722670&time_zone=lst_ldt&units=english&format=json
+
+2) Get variable “v.JSON_02” from the JSON_02 below where “t.JSON_02” equals “t.JSON_01”:
+https://tidesandcurrents.noaa.gov/api/datagetter?product=predictions&application=NOS.COOPS.TAC.WL&date=latest&datum=MLLW&station=8722670&time_zone=lst_ldt&units=english&format=json
+
+3) Get variable “v.JSON_03” from the JSON_03 below where “t.JSON_03” is the latest:
+https://tidesandcurrents.noaa.gov/api/datagetter?product=predictions&application=NOS.COOPS.TAC.WL&date=latest&datum=MLLW&station=8722669&time_zone=lst_ldt&units=english&format=json&interval=1
+
+4) Get all “v” variables from the JSON_04 below replacing dates with TODAY() and TOMORROW():
+https://tidesandcurrents.noaa.gov/api/datagetter?product=predictions&application=NOS.COOPS.TAC.WL&begin_date=20191017&end_date=20191018&datum=MLLW&station=8722669&time_zone=lst_ldt&units=english&format=json&interval=hilo
+
+
+
+5) Display:
+- CURRENT SURGE: v.JSON_01 - v.JSON_02
+and a list of 5 rows ordered ascendent by time:
+- CURRENT TIME: t.JSON_03, WATER LEVEL: v.JSON_03 + (v.JSON_01 - v.JSON_02)
+- All 4 “t”s and “v”s from JSON_04
+
+NOTES:
+- i've just included a sufix .JSON_0x because every JSON file has its own "v"s and "t"s … so t.JSON_01 it the variable t from file JSON_01
+- Date format for item 4): 20191014 (yyyymmdd)
+- Source code needed
+- JS + HTML
