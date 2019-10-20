@@ -10,6 +10,7 @@ RELEASE
 
 DEPLOY
 - create new version folder @server (FTP @coda or @transmit)
+- remove oldest version folder
 - copy release files
 - update domain pointer @godaddy
 - check DNS refresh
