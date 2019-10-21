@@ -54,6 +54,8 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="js/moment.js"></script>
 	<script src="js/myfunctions.js"></script>
+	<script src="js/myurls.js"></script>
+	<script src="js/station0.js"></script>
 	<script src="js/station1.js"></script>
 	<script src="js/station2.js"></script>
 
@@ -159,11 +161,13 @@
 	</div>
 
 
+
 <!-- ****** surge ****** -->
 	<p style="font-size: 3vh;font-weight: bold;margin: 150px 0 40px 0;padding-top: calc(env(safe-area-inset-top) - 10px);">Current Surge
 		<br><span id="current-surge" style="font-size: 5vh;"></span><span style="font-weight: normal;">ft</span>
-		<br><span style="font-size: 1.7vh;font-weight: normal;font-style: italic">(source: NOAA Station# <a href="https://tidesandcurrents.noaa.gov/waterlevels.html?id=8722670&timezone=LST/LDT" target="_blank">8722670</a>)</span>
+		<br><span style="font-size: 1.7vh;font-weight: normal;font-style: italic">(source: NOAA Station# <a id="url_link_station0" target="_blank">8722670</a>)</span>
 	</p>
+
 
 
 <!-- ****** station1 ****** -->
@@ -182,10 +186,11 @@
 
 			</tbody>
 		</table>
-		<p style="font-size: 1.7vh;font-weight: normal;font-style: italic">(source: NOAA Station# <a id="url_station1_link" target="_blank">8722669</a>)</p>
+		<p style="font-size: 1.7vh;font-weight: normal;font-style: italic">(source: NOAA Station# <a id="url_link_station1" target="_blank">8722669</a>)</p>
 	</div>
 	<br>
 	<br>
+
 
 
 <!-- ****** station2 ****** -->
@@ -206,11 +211,12 @@
 
 			</tbody>
 		</table>
-		<p style="font-size: 1.7vh;font-weight: normal;font-style: italic">(source: NOAA Station# <a id="url_station2_link" target="_blank">8722802</a>)</p>
+		<p style="font-size: 1.7vh;font-weight: normal;font-style: italic">(source: NOAA Station# <a id="url_link_station2" target="_blank">8722802</a>)</p>
 	</div>
 	<br>
 	<br>
 	<br>
+
 
 
 <!-- ****** footer ****** -->
@@ -221,6 +227,8 @@
 			<br>#madeinPBC
 		</p>
 	<br>
+
+
 
 </body>
 

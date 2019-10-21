@@ -1,23 +1,22 @@
 (function ($) {
 	$(document).ready(function () {
-		var url_1 = "https://tidesandcurrents.noaa.gov/api/datagetter?product=water_level&application=NOS.COOPS.TAC.WL&date=latest&datum=MLLW&station=8722670&time_zone=lst_ldt&units=english&format=json";
-		var url_2 = "https://tidesandcurrents.noaa.gov/api/datagetter?product=predictions&application=NOS.COOPS.TAC.WL&date=latest&datum=MLLW&station=8722670&time_zone=lst_ldt&units=english&format=json";
-		var url_3 = "https://tidesandcurrents.noaa.gov/api/datagetter?product=predictions&application=NOS.COOPS.TAC.WL&date=latest&datum=MLLW&station=8722802&time_zone=lst_ldt&units=english&format=json&interval=1";
-		var url_4 = "https://tidesandcurrents.noaa.gov/api/datagetter?product=predictions&application=NOS.COOPS.TAC.WL&begin_date=<<BDATE>>&end_date=<<EDATE>>&datum=MLLW&station=8722802&time_zone=lst_ldt&units=english&format=json&interval=hilo";
+
+		var station0id = "8722670"
+		var station2id = "8722802"
 
 		var t1, v1, v2, t3, v3;
 		t1 = v1 = v2 = t3 = v3 = null;
 
 		$.ajax({
 			method: 'GET',
-			url: url_1,
+			url: url_json_waterlevel.replace(/<<STATIONID>>/g, station0id),
 			success: function (response) {
 				t1 = response.data[0].t;
 				v1 = response.data[0].v;
 
 				$.ajax({
 					method: 'GET',
-					url: url_2,
+					url: url_json_tidepredictions.replace(/<<STATIONID>>/g, station0id),
 					success: function (response) {
 						v2 = response.predictions.filter(function (el) {
 							if (el.t === t1) {
@@ -27,7 +26,7 @@
 
 						$.ajax({
 							method: 'GET',
-							url: url_3,
+							url: url_json_tidepredictions.replace(/<<STATIONID>>/g, station2id),
 							success: function (response) {
 								var prediction = response.predictions.pop();
 								t3 = prediction.t;
@@ -45,7 +44,7 @@
 
 								$.ajax({
 									method: 'GET',
-									url: url_4.replace(/<<BDATE>>/g, getToday()).replace(/<<EDATE>>/g, getTomorrow()),
+									url: url_json_hilopredictions.replace(/<<STATIONID>>/g, station2id).replace(/<<BDATE>>/g, getToday()).replace(/<<EDATE>>/g, getTomorrow()),
 									success: function (response) {
 										window.predictions = response.predictions.map(function (el) {
 											return {
@@ -64,14 +63,6 @@
 											if (a.t > b.t) return 1;
 											return 0;
 										});
-
-										var url_station_link1 = "https://tidesandcurrents.noaa.gov/noaatidepredictions.html?id=8722802&units=standard&timezone=LST/LDT&clock=12hour&datum=MLLW&action=dailychart&bdate=<<FIRST_DAY>>&edate=<<LAST_DAY>>";
-										var date = new Date(), y = date.getFullYear(), m = date.getMonth();
-										var firstDay = moment(new Date(y, m, 1)).format("YYYYMMDD");
-										var lastDay = moment(new Date(y, m + 1, 0)).format("YYYYMMDD");
-										var url_station_link2 = url_station_link1.replace(/<<FIRST_DAY>>/g, firstDay).replace(/<<LAST_DAY>>/g, lastDay);
-										document.getElementById("url_station2_link").setAttribute("href",url_station_link2);
-
 
 										var htmlString = '';
 										predictions.forEach(function (p) {
@@ -103,7 +94,15 @@
 												}
 											}
 										});
+
 										$('#station2 tbody').html(htmlString);
+										
+										var date = new Date(), y = date.getFullYear(), m = date.getMonth();
+										var firstDay = moment(new Date(y, m, 1)).format("YYYYMMDD");
+										var lastDay = moment(new Date(y, m + 1, 0)).format("YYYYMMDD");
+										var url_link_station = url_link_station_tidepredictions.replace(/<<STATIONID>>/g, station2id).replace(/<<BDATE>>/g, firstDay).replace(/<<EDATE>>/g, lastDay);
+										document.getElementById("url_link_station2").setAttribute("href",url_link_station);
+										
 									}
 								});
 							}
