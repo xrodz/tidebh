@@ -1,7 +1,5 @@
 (function ($) {
 	$(document).ready(function () {
-
-		var station0id = "8722670" <!-- ****** station for real-time water levels ****** -->
 		
 		var t1, v1, v2;
 		t1 = v1 = v2 = null;
@@ -25,9 +23,12 @@
 
 						var currentSurge = v1 - v2;
 						var	currentDate = t1;
-						var url_link_station = url_link_station_waterlevels.replace(/<<STATIONID>>/g, station0id);
 
-						document.getElementById("url_link_station0").setAttribute("href",url_link_station);					
+						var url_link_station = url_link_station_waterlevels.replace(/<<STATIONID>>/g, station0id);
+						document.getElementById("station0url").setAttribute("href",url_link_station);					
+
+						$('#station0id').text(station0id);
+
 						$('#current-surge').text((currentSurge).toFixed(1));
 						$('#current-date').text(moment(currentDate).format("ddd, MMM Do, YYYY"));
 						$('#current-year').text(moment(currentDate).format("YYYY"));

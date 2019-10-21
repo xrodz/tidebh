@@ -1,8 +1,5 @@
 (function ($) {
 	$(document).ready(function () {
-
-		var station0id = "8722670" <!-- ****** station for real-time water levels ****** -->
-		var station1id = "8722669" <!-- ****** station for predictions ****** -->
 		
 		var t1, v1, v2, t3, v3;
 		t1 = v1 = v2 = t3 = v3 = null;
@@ -101,7 +98,11 @@
 										var firstDay = moment(new Date(y, m, 1)).format("YYYYMMDD");
 										var lastDay = moment(new Date(y, m + 1, 0)).format("YYYYMMDD");
 										var url_link_station = url_link_station_tidepredictions.replace(/<<STATIONID>>/g, station1id).replace(/<<BDATE>>/g, firstDay).replace(/<<EDATE>>/g, lastDay);
-										document.getElementById("url_link_station1").setAttribute("href",url_link_station);	
+										document.getElementById("station1url").setAttribute("href",url_link_station);	
+										document.getElementById("tideobservations1url").setAttribute("href",url_link_tideobservations);					
+
+										$('#station1id').text(station1id);
+										$('#station1name').text(station1name);
 									}
 								});
 							}

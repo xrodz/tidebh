@@ -54,7 +54,7 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="js/moment.js"></script>
 	<script src="js/myfunctions.js"></script>
-	<script src="js/myurls.js"></script>
+	<script src="js/myidsurls.js"></script>
 	<script src="js/station0.js"></script>
 	<script src="js/station1.js"></script>
 	<script src="js/station2.js"></script>
@@ -165,7 +165,7 @@
 <!-- ****** surge ****** -->
 	<p style="font-size: 3vh;font-weight: bold;margin: 150px 0 40px 0;padding-top: calc(env(safe-area-inset-top) - 10px);">Current Surge
 		<br><span id="current-surge" style="font-size: 5vh;"></span><span style="font-weight: normal;">ft</span>
-		<br><span style="font-size: 1.7vh;font-weight: normal;font-style: italic">(source: NOAA Station# <a id="url_link_station0" target="_blank">8722670</a>)</span>
+		<br><span style="font-size: 1.7vh;font-weight: normal;font-style: italic">(source: NOAA Station# <a id="station0url" target="_blank"><span id="station0id"></span></a>)</span>
 	</p>
 
 
@@ -173,7 +173,7 @@
 <!-- ****** station1 ****** -->
 	<div id="station1">
 		<p style="font-size: 3vh;font-weight: bold;margin-bottom: 10px;">TIDE STATION #1
-			<br><span style="font-size: 2.2vh;font-weight: normal;">Lake Worth ICW (<a href="https://docs.google.com/spreadsheets/d/1C4ZcLu-jInXRscMxP8JZBQ1bXHWmvbjCtxdGB6KHitQ" target="_blank">Error 0.1ft</a>)</span>
+			<br><span style="font-size: 2.2vh;font-weight: normal;"><span id="station1name"></span> (<a id="tideobservations1url" target="_blank">Error 0.1ft</a>)</span>
 		</p>
 		<table align="center">
 			<thead>
@@ -186,7 +186,7 @@
 
 			</tbody>
 		</table>
-		<p style="font-size: 1.7vh;font-weight: normal;font-style: italic">(source: NOAA Station# <a id="url_link_station1" target="_blank">8722669</a>)</p>
+		<p style="font-size: 1.7vh;font-weight: normal;font-style: italic">(source: NOAA Station# <a id="station1url" target="_blank"><span id="station1id"></span></a>)</p>
 	</div>
 	<br>
 	<br>
@@ -196,7 +196,7 @@
 <!-- ****** station2 ****** -->
 	<div id="station2">
 		<p style="font-size: 3vh;font-weight: bold;margin-bottom: 10px;">TIDE STATION #2
-			<br><span style="font-size: 2.2vh;font-weight: normal;">Lake Wyman (<a href="https://docs.google.com/spreadsheets/d/1C4ZcLu-jInXRscMxP8JZBQ1bXHWmvbjCtxdGB6KHitQ" target="_blank">Error 0.4ft</a>)</span>
+			<br><span style="font-size: 2.2vh;font-weight: normal;"><span id="station2name"></span> (<a id="tideobservations2url" target="_blank">Error 0.4ft</a>)</span>
 		</p>
 		<table align="center">
 			<thead>
@@ -211,7 +211,7 @@
 
 			</tbody>
 		</table>
-		<p style="font-size: 1.7vh;font-weight: normal;font-style: italic">(source: NOAA Station# <a id="url_link_station2" target="_blank">8722802</a>)</p>
+		<p style="font-size: 1.7vh;font-weight: normal;font-style: italic">(source: NOAA Station# <a id="station2url" target="_blank"><span id="station2id"></span></a>)</p>
 	</div>
 	<br>
 	<br>
