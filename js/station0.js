@@ -1,7 +1,7 @@
 (function ($) {
 	$(document).ready(function () {
 
-		var station0id = "8722670"
+		var station0id = "8722670" <!-- ****** station for real-time water levels ****** -->
 		
 		var t1, v1, v2;
 		t1 = v1 = v2 = null;
