@@ -12,7 +12,7 @@ DEPLOY
 - get latest version files
 - create new version folder @server (FTP @coda or @transmit)
 - remove oldest version folder
-- transmit new release files
+- copy new release files to new folder
 - update domain pointer @godaddy
 	https://a2plcpnl0023.prod.iad2.secureserver.net:2083/cpsess6723017102/frontend/paper_lantern/index.html?login=1&post_login=671331446373
 - check DNS refresh
