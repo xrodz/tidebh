@@ -28,13 +28,11 @@ var getWaterLevel = function (tide, surge) {
 }
 
 var getTideType = function (type) {
-	if (type === "L") tideType = "low";
-	if (type === "H") tideType = "HIGH";
-	return tideType;
+	if (type === "L") return "low";
+	if (type === "H") return "HIGH";
 }
 
 var checkKingTide = function (level) {
-	kingTideAlert = "";
-	if (level >= king_tide_min) kingTideAlert = "King-Tide Alert! (>" + king_tide_min + "ft)";
-	return kingTideAlert;
+	if (level >= king_tide_min) return "King-Tide Alert! (>" + king_tide_min + "ft)";
+	if (level < king_tide_min) return "";
 }
