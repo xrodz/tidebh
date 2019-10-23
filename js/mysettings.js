@@ -31,4 +31,4 @@ var url_link_tideobservations = "https://docs.google.com/spreadsheets/d/1C4ZcLu-
 
 
 <!-- ****** King Tide Min in ft ****** -->
-var king_tide_min = 3;
+var king_tide_min = 4;
