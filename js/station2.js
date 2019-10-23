@@ -62,6 +62,7 @@
 										});
 
 										var kingTideAlert = checkKingTide(predictions[0].v);
+										var dryTideAlert = checkDryTide(predictions[predictions.length-1].v);
 										
 										predictions.sort(function (a, b) {
 											if (a.t < b.t) return -1;
@@ -112,6 +113,7 @@
 										$('#station2id').text(station2id);
 										$('#station2name').text(station2name);
 										$('#kingTideAlert2').text(kingTideAlert);
+										$('#dryTideAlert2').text(dryTideAlert);
 									}
 								});
 							}
