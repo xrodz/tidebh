@@ -56,6 +56,14 @@
 										predictions.push(currentPrediction);
 
 										predictions.sort(function (a, b) {
+											if (a.v > b.v) return -1;
+											if (a.v < b.v) return 1;
+											return 0;
+										});
+
+										var kingTideAlert = checkKingTide(predictions[0].v);
+										
+										predictions.sort(function (a, b) {
 											if (a.t < b.t) return -1;
 											if (a.t > b.t) return 1;
 											return 0;
@@ -103,6 +111,7 @@
 
 										$('#station2id').text(station2id);
 										$('#station2name').text(station2name);
+										$('#kingTideAlert2').text(kingTideAlert);
 									}
 								});
 							}

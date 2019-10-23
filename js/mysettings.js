@@ -1,11 +1,12 @@
 <!-- ****** stations IDs & names ****** -->
-var station0id = "8722670" <!-- ****** station for real-time water levels ****** -->
+var station0id = "8722670"; <!-- ****** station for real-time water levels ****** -->
 
-var station1id = "8722669" <!-- ****** station for predictions ****** -->
-var station1name = "Lake Worth ICW" <!-- ****** station for predictions ****** -->
+var station1id = "8722669"; <!-- ****** station for predictions ****** -->
+var station1name = "Lake Worth ICW"; <!-- ****** station for predictions ****** -->
 
-var station2id = "8722802" <!-- ****** station for predictions ****** -->
-var station2name = "Lake Wyman" <!-- ****** station for predictions ****** -->
+var station2id = "8722802"; <!-- ****** station for predictions ****** -->
+var station2name = "Lake Wyman"; <!-- ****** station for predictions ****** -->
+
 
 
 <!-- ****** JSON latest water level + station name ****** -->
@@ -19,10 +20,15 @@ var url_json_hilopredictions = "https://tidesandcurrents.noaa.gov/api/datagetter
 
 
 <!-- ****** LINK station water levels ****** -->
-var url_link_station_waterlevels = "https://tidesandcurrents.noaa.gov/waterlevels.html?id=<<STATIONID>>&timezone=LST/LDT"
+var url_link_station_waterlevels = "https://tidesandcurrents.noaa.gov/waterlevels.html?id=<<STATIONID>>&timezone=LST/LDT";
 
 <!-- ****** LINK station tide predictions ****** -->
-var url_link_station_tidepredictions = "https://tidesandcurrents.noaa.gov/noaatidepredictions.html?id=<<STATIONID>>&units=standard&timezone=LST/LDT&clock=12hour&datum=MLLW&action=dailychart&bdate=<<BDATE>>&edate=<<EDATE>>"
+var url_link_station_tidepredictions = "https://tidesandcurrents.noaa.gov/noaatidepredictions.html?id=<<STATIONID>>&units=standard&timezone=LST/LDT&clock=12hour&datum=MLLW&action=dailychart&bdate=<<BDATE>>&edate=<<EDATE>>";
 
 <!-- ****** LINK google drive tide observations ****** -->
-var url_link_tideobservations = "https://docs.google.com/spreadsheets/d/1C4ZcLu-jInXRscMxP8JZBQ1bXHWmvbjCtxdGB6KHitQ"
+var url_link_tideobservations = "https://docs.google.com/spreadsheets/d/1C4ZcLu-jInXRscMxP8JZBQ1bXHWmvbjCtxdGB6KHitQ";
+
+
+
+<!-- ****** King Tide Min in ft ****** -->
+var king_tide_min = 3;

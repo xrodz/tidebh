@@ -32,3 +32,9 @@ var getTideType = function (type) {
 	if (type === "H") tideType = "HIGH";
 	return tideType;
 }
+
+var checkKingTide = function (level) {
+	kingTideAlert = "";
+	if (level >= king_tide_min) kingTideAlert = "King-Tide Alert! (>" + king_tide_min + "ft)";
+	return kingTideAlert;
+}
