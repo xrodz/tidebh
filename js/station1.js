@@ -49,6 +49,8 @@
 												y: getTideType(el.type),
 												d: el.v,
 												v: getWaterLevel(el.v, currentSurge),
+												kt: checkKingTide(getWaterLevel(el.v, currentSurge)),
+												dt: checkDryTide(getWaterLevel(el.v, currentSurge)),
 												future: el.t.slice(8,10) - getToday().slice(6)
 											};
 										});
@@ -84,21 +86,41 @@
 												'<tr>';
 											} else {
 												if (p.future) {
-													htmlString +=
-													'<tr>' +
-													 '<td>' + moment(p.t).format("h:mm a") + '</td>' +
-													 '<td>' + p.y + '</td>' +
-													 '<td>' + Number(p.d).toFixed(1) + '</td>' +
-													 '<td>' + Number(p.v).toFixed(1) + '</td>' +
-													'<tr>';
-												} else {
+													if (p.kt || p.dt) {
 														htmlString +=
-														'<tr style="background-color: #D5D8DC;color: #000000;">' +
+														'<tr style="color: red;">' +
 														 '<td>' + moment(p.t).format("h:mm a") + '</td>' +
 														 '<td>' + p.y + '</td>' +
 														 '<td>' + Number(p.d).toFixed(1) + '</td>' +
 														 '<td>' + Number(p.v).toFixed(1) + '</td>' +
 														'<tr>';
+													} else {
+															htmlString +=
+															'<tr>' +
+															 '<td>' + moment(p.t).format("h:mm a") + '</td>' +
+															 '<td>' + p.y + '</td>' +
+															 '<td>' + Number(p.d).toFixed(1) + '</td>' +
+															 '<td>' + Number(p.v).toFixed(1) + '</td>' +
+															'<tr>';
+													}
+												} else {
+														if (p.kt || p.dt) {
+															htmlString +=
+															'<tr style="background-color: #D5D8DC;color: red;">' +
+															 '<td>' + moment(p.t).format("h:mm a") + '</td>' +
+															 '<td>' + p.y + '</td>' +
+															 '<td>' + Number(p.d).toFixed(1) + '</td>' +
+															 '<td>' + Number(p.v).toFixed(1) + '</td>' +
+															'<tr>';
+														} else {
+																htmlString +=
+																'<tr style="background-color: #D5D8DC;color: #000000;">' +
+																 '<td>' + moment(p.t).format("h:mm a") + '</td>' +
+																 '<td>' + p.y + '</td>' +
+																 '<td>' + Number(p.d).toFixed(1) + '</td>' +
+																 '<td>' + Number(p.v).toFixed(1) + '</td>' +
+																'<tr>';
+														}
 												}
 											}
 										});
