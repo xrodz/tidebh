@@ -33,11 +33,11 @@ var getTideType = function (type) {
 }
 
 var checkKingTide = function (level) {
-	if (level >= king_tide_min) return "King-Tide Warning! (>" + king_tide_min + "ft)";
-	if (level < king_tide_min) return "";
+	if (level >= king_tide_min) return 1;
+	if (level < king_tide_min) return 0;
 }
 
 var checkDryTide = function (level) {
-	if (level <= dry_tide_max) return "Dry-Tide Warning! (<" + dry_tide_max + "ft)";
-	if (level > dry_tide_max) return "";
+	if (level <= dry_tide_max) return 1;
+	if (level > dry_tide_max) return 0;
 }
