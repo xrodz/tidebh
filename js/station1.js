@@ -61,8 +61,8 @@
 											return 0;
 										});
 
-										var kingTideAlert = checkKingTide(predictions[0].v);
-										var dryTideAlert = checkDryTide(predictions[predictions.length-1].v);
+										var kingTideWarning = checkKingTide(predictions[0].v);
+										var dryTideWarning = checkDryTide(predictions[predictions.length-1].v);
 
 										predictions.sort(function (a, b) {
 											if (a.t < b.t) return -1;
@@ -112,8 +112,8 @@
 
 										$('#station1id').text(station1id);
 										$('#station1name').text(station1name);
-										$('#kingTideAlert1').text(kingTideAlert);
-										$('#dryTideAlert1').text(dryTideAlert);
+										$('#kingTideWarning1').text(kingTideWarning);
+										$('#dryTideWarning1').text(dryTideWarning);
 									}
 								});
 							}
