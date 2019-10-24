@@ -31,5 +31,5 @@ var url_link_tideobservations = "https://docs.google.com/spreadsheets/d/1C4ZcLu-
 
 
 <!-- ****** Extreme Tides Limits in ft ****** -->
-var king_tide_min = 4; <!-- ****** usually 4ft ****** -->
-var dry_tide_max = -0.5; <!-- ****** usually -0.5ft ****** -->
+var king_tide_min = 3.2; <!-- ****** usually 4ft ****** -->
+var dry_tide_max = 0; <!-- ****** usually -0.5ft ****** -->
