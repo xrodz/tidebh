@@ -127,11 +127,11 @@
 										
 										$('#station1 tbody').html(htmlString);
 										
-										var date = new Date(), y = date.getFullYear(), m = date.getMonth();
+										var date = luxon.DateTime.local().setZone("America/New_York"), y = date.year, m = date.month - 1;
 										var firstDay = moment(new Date(y, m, 1)).format("YYYYMMDD");
 										var lastDay = moment(new Date(y, m + 1, 0)).format("YYYYMMDD");
 										var url_link_station = url_link_station_tidepredictions.replace(/<<STATIONID>>/g, station1id).replace(/<<BDATE>>/g, firstDay).replace(/<<EDATE>>/g, lastDay);
-										document.getElementById("station1url").setAttribute("href",url_link_station);	
+										document.getElementById("station1url").setAttribute("href",url_link_station);
 										document.getElementById("tideobservations1url").setAttribute("href",url_link_tideobservations);					
 
 										$('#station1id').text(station1id);

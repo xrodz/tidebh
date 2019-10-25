@@ -22,7 +22,8 @@
 						})[0].v;
 
 						var currentSurge = v1 - v2;
-						var	currentDate = new Date();
+						var	currentDate = luxon.DateTime.local().setZone("America/New_York");
+						console.log(currentDate);
 
 						var url_link_station = url_link_station_waterlevels.replace(/<<STATIONID>>/g, station0id);
 						document.getElementById("station0url").setAttribute("href",url_link_station);					
@@ -30,8 +31,8 @@
 						$('#station0id').text(station0id);
 
 						$('#current-surge').text((currentSurge).toFixed(1));
-						$('#current-date').text(moment(currentDate).format("ddd, MMM Do, YYYY"));
-						$('#current-year').text(moment(currentDate).format("YYYY"));
+						$('#current-date').text(currentDate.toFormat("ccc, LLL d, yyyy"));
+						$('#current-year').text(currentDate.toFormat("yyyy"));
 					}
 				});
 			}

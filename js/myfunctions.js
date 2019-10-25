@@ -1,18 +1,18 @@
 var getToday = function () {
-	var today = new Date(),
-		year = today.getFullYear(),
-		month = today.getMonth() + 1,
-		date = today.getDate();
+	var today = luxon.DateTime.local().setZone("America/New_York"),
+		year = today.year,
+		month = today.month,
+		date = today.day;
 	if (month < 10) month = "0" + month;
 	if (date < 10) date = "0" + date;
 	return "" + year + month + date;
 }
 
 var getTomorrow = function () {
-	var today = new Date(),
-		year = today.getFullYear(),
-		month = today.getMonth() + 1,
-		date = today.getDate() + 1;
+	var today = luxon.DateTime.local().setZone("America/New_York"),
+		year = today.year,
+		month = today.month,
+		date = today.day + 1;
 	if (month < 10) month = "0" + month;
 	if (date < 10) date = "0" + date;
 	return "" + year + month + date;
