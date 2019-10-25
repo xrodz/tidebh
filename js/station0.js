@@ -1,8 +1,16 @@
 (function ($) {
 	$(document).ready(function () {
-		
-		var t1, v1, v2;
-		t1 = v1 = v2 = null;
+
+		var t1, v1, v2, v;
+		t1 = v1 = v2 = v = null;
+
+		$.ajax({
+			method: 'GET',
+			url: url_link_latest_release,
+			success: function (response) {
+				v = response.tag_name;
+			}
+		});
 
 		$.ajax({
 			method: 'GET',
@@ -32,6 +40,8 @@
 						
 						$('#current-date').text(currentDate.toFormat("ccc, LLL d, yyyy (ZZZZ)"));
 						$('#current-year').text(currentDate.toFormat("yyyy"));
+
+						$('#current-release').text(v);
 					}
 				});
 			}

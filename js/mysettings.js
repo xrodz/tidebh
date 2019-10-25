@@ -35,3 +35,8 @@ var king_tide_min = 3.7; <!-- ****** usually 4ft ****** -->
 var dry_tide_max = 0.2; <!-- ****** usually -0.5ft ****** -->
 var king_tide_warning_text = "King-Tide Warning! (>" + king_tide_min + "ft)";
 var dry_tide_warning_text =  "Dry-Tide Warning! (<" + dry_tide_max + "ft)";
+
+
+
+<!-- ****** JSON latest release ****** -->
+var url_link_latest_release = "https://api.github.com/repos/xrodz/tidebh/releases/latest";
