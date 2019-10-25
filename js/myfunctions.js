@@ -6,6 +6,14 @@ var getTomorrow = function () {
 	return luxon.DateTime.local().setZone(stations_timezone).plus({days: 1}).toFormat("yyyyLLdd");
 }
 
+var getStartOfMonth = function () {
+	return luxon.DateTime.local().setZone(stations_timezone).startOf('month').toFormat("yyyyLLdd");
+}
+
+var getEndOfMonth = function () {
+	return luxon.DateTime.local().setZone(stations_timezone).endOf('month').toFormat("yyyyLLdd");
+}
+
 var toFixed = function (n) {
 	return (Math.round(n * 1000) / 1000) + '';
 }
