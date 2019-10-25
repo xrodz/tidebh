@@ -1,5 +1,5 @@
 var getToday = function () {
-	var today = new Date,
+	var today = new Date(),
 		year = today.getFullYear(),
 		month = today.getMonth() + 1,
 		date = today.getDate();
@@ -9,7 +9,7 @@ var getToday = function () {
 }
 
 var getTomorrow = function () {
-	var today = new Date,
+	var today = new Date(),
 		year = today.getFullYear(),
 		month = today.getMonth() + 1,
 		date = today.getDate() + 1;
