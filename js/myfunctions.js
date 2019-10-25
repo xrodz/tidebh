@@ -29,3 +29,7 @@ var checkDryTide = function (level) {
 	if (level <= dry_tide_max) return 1;
 	if (level > dry_tide_max) return 0;
 }
+
+function surge() {
+  alert("Surge is the water level difference from predictions calculated by the moon and sun positions. Those differences can occur by wind push, currents, water dumping, etc and they change the water levels comparing to the original harmonic predictions.");
+}
