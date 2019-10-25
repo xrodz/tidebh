@@ -37,6 +37,8 @@
 						$('#station0id').text(station0id);
 
 						$('#current-surge').text((currentSurge).toFixed(1));
+						$('#kingTideLevel').text(king_tide_min_display);
+						$('#dryTideLevel').text(dry_tide_max_display);
 						
 						$('#current-date').text(currentDate.toFormat("ccc, LLL d, yyyy (ZZZZ)"));
 						$('#current-year').text(currentDate.toFormat("yyyy"));

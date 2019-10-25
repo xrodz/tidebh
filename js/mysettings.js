@@ -33,8 +33,10 @@ var url_link_tideobservations = "https://docs.google.com/spreadsheets/d/1C4ZcLu-
 <!-- ****** Extreme Tides ****** -->
 var king_tide_min = 3.8; <!-- ****** usually 4ft ****** -->
 var dry_tide_max = 0.2; <!-- ****** usually -0.5ft ****** -->
-var king_tide_warning_text = "King-Tide Warning! (>" + king_tide_min + "ft)";
-var dry_tide_warning_text =  "Dry-Tide Warning! (<" + dry_tide_max + "ft)";
+var king_tide_warning_text = "King-Tide Warning!";
+var dry_tide_warning_text =  "Dry-Tide Warning!";
+var king_tide_min_display = "King-Tide: >" + king_tide_min + "ft";
+var dry_tide_max_display =  "Dry-Tide: <" + dry_tide_max + "ft";
 
 
 
