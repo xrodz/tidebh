@@ -65,6 +65,7 @@
 
 										var kingTideWarning = null;
 										if (checkKingTide(predictions[0].v)) {var kingTideWarning = king_tide_warning_text;}
+
 										var dryTideWarning = null;
 										if (checkDryTide(predictions[predictions.length-1].v)) {var dryTideWarning = dry_tide_warning_text;}
 										
