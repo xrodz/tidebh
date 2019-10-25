@@ -1,9 +1,9 @@
 var getToday = function () {
-	return luxon.DateTime.local().setZone("America/New_York").toFormat("yyyyLLdd");
+	return luxon.DateTime.local().setZone(stations_timezone).toFormat("yyyyLLdd");
 }
 
 var getTomorrow = function () {
-	return luxon.DateTime.local().setZone("America/New_York").plus({days: 1}).toFormat("yyyyLLdd");
+	return luxon.DateTime.local().setZone(stations_timezone).plus({days: 1}).toFormat("yyyyLLdd");
 }
 
 var toFixed = function (n) {

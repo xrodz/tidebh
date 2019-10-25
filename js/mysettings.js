@@ -7,6 +7,7 @@ var station1name = "Lake Worth ICW"; <!-- ****** station for predictions ****** 
 var station2id = "8722802"; <!-- ****** station for predictions ****** -->
 var station2name = "Lake Wyman"; <!-- ****** station for predictions ****** -->
 
+var stations_timezone = "America/New_York"; <!-- ****** stations timezone ****** -->
 
 
 <!-- ****** JSON latest water level + station name ****** -->

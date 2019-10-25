@@ -30,7 +30,7 @@
 						})[0].v;
 
 						var currentSurge = v1 - v2;
-						var	currentDate = luxon.DateTime.local().setZone("America/New_York");
+						var	currentDate = luxon.DateTime.local().setZone(stations_timezone);
 						var url_link_station = url_link_station_waterlevels.replace(/<<STATIONID>>/g, station0id);
 						
 						document.getElementById("station0url").setAttribute("href",url_link_station);					
