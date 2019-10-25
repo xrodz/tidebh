@@ -125,14 +125,15 @@
 											}
 										});
 
-										$('#station2 tbody').html(htmlString);
-										
 										var url_link_station = url_link_station_tidepredictions.replace(/<<STATIONID>>/g, station2id).replace(/<<BDATE>>/g, getStartOfMonth()).replace(/<<EDATE>>/g, getEndOfMonth());
-										document.getElementById("station2url").setAttribute("href",url_link_station);
-										document.getElementById("tideobservations2url").setAttribute("href",url_link_tideobservations);					
 
 										$('#station2id').text(station2id);
 										$('#station2name').text(station2name);
+										document.getElementById("station2url").setAttribute("href",url_link_station);
+										document.getElementById("tideobservations2url").setAttribute("href",url_link_tideobservations);					
+
+										$('#station2 tbody').html(htmlString);
+										
 										$('#kingTideWarning2').text(kingTideWarning);
 										$('#dryTideWarning2').text(dryTideWarning);
 									}

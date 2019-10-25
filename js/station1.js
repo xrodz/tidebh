@@ -65,6 +65,7 @@
 
 										var kingTideWarning = null;
 										if (checkKingTide(predictions[0].v)) {var kingTideWarning = king_tide_warning_text;}
+
 										var dryTideWarning = null;
 										if (checkDryTide(predictions[predictions.length-1].v)) {var dryTideWarning = dry_tide_warning_text;}
 
@@ -125,14 +126,15 @@
 											}
 										});
 										
-										$('#station1 tbody').html(htmlString);
-										
 										var url_link_station = url_link_station_tidepredictions.replace(/<<STATIONID>>/g, station1id).replace(/<<BDATE>>/g, getStartOfMonth()).replace(/<<EDATE>>/g, getEndOfMonth());
-										document.getElementById("station1url").setAttribute("href",url_link_station);
-										document.getElementById("tideobservations1url").setAttribute("href",url_link_tideobservations);					
 
 										$('#station1id').text(station1id);
 										$('#station1name').text(station1name);
+										document.getElementById("station1url").setAttribute("href",url_link_station);
+										document.getElementById("tideobservations1url").setAttribute("href",url_link_tideobservations);					
+
+										$('#station1 tbody').html(htmlString);
+
 										$('#kingTideWarning1').text(kingTideWarning);
 										$('#dryTideWarning1').text(dryTideWarning);
 									}
