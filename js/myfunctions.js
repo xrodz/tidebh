@@ -22,6 +22,10 @@ var toFixed = function (n) {
 	return (Math.round(n * 1000) / 1000) + '';
 }
 
+var formatTimeStamp = function (timestamp) {
+	return luxon.DateTime.fromSQL(timestamp).toFormat("h:mm a");
+}
+
 var getWaterLevel = function (tide, surge) {
 	var waterLevel = parseFloat(tide) + parseFloat(surge);
 	return toFixed(waterLevel);
