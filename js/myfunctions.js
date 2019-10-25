@@ -1,3 +1,7 @@
+var getCurrentDate = function () {
+	return luxon.DateTime.local().setZone(stations_timezone);
+}
+
 var getToday = function () {
 	return luxon.DateTime.local().setZone(stations_timezone).toFormat("yyyyLLdd");
 }

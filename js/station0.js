@@ -30,7 +30,6 @@
 						})[0].v;
 
 						var currentSurge = v1 - v2;
-						var	currentDate = luxon.DateTime.local().setZone(stations_timezone);
 						var url_link_station = url_link_station_waterlevels.replace(/<<STATIONID>>/g, station0id);
 						
 						$('#station0id').text(station0id);
@@ -41,8 +40,8 @@
 						$('#kingTideLevel').text(king_tide_min_display);
 						$('#dryTideLevel').text(dry_tide_max_display);
 						
-						$('#current-date').text(currentDate.toFormat("ccc, LLL d, yyyy (ZZZZ)"));
-						$('#current-year').text(currentDate.toFormat("yyyy"));
+						$('#current-date').text(getCurrentDate().toFormat("ccc, LLL d, yyyy (ZZZZ)"));
+						$('#current-year').text(getCurrentDate().toFormat("yyyy"));
 						$('#current-release').text(v);
 					}
 				});
