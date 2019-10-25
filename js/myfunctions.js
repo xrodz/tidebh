@@ -1,22 +1,9 @@
 var getToday = function () {
-	var today = luxon.DateTime.local().setZone("America/New_York"),
-		year = today.year,
-		month = today.month,
-		date = today.day;
-	if (month < 10) month = "0" + month;
-	if (date < 10) date = "0" + date;
-	console.log(year, month, date);
-	return "" + year + month + date;
+	return luxon.DateTime.local().setZone("America/New_York").toFormat("yyyyLLdd");
 }
 
 var getTomorrow = function () {
-	var today = luxon.DateTime.local().setZone("America/New_York"),
-		year = today.year,
-		month = today.month,
-		date = today.day + 1;
-	if (month < 10) month = "0" + month;
-	if (date < 10) date = "0" + date;
-	return "" + year + month + date;
+	return luxon.DateTime.local().setZone("America/New_York").plus({days: 1}).toFormat("yyyyLLdd");
 }
 
 var toFixed = function (n) {
