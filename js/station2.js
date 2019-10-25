@@ -79,7 +79,7 @@
 											if (p.current) {
 												htmlString +=
 												'<tr style="font-weight: bold;background-color: #2e96d3;color: #ffffff;">' +
-												 '<td>' + moment(p.t).format("h:mm a") + '</td>' +
+												 '<td>' + luxon.DateTime.fromSQL(p.t).toFormat("h:mm a") + '</td>' +
 												 '<td>NOW</td>' +
 												 '<td>' + Number(p.d).toFixed(1) + '</td>' +
 												 '<td>' + Number(p.v).toFixed(1) + '</td>' +
@@ -89,7 +89,7 @@
 													if (p.kt || p.dt) {
 														htmlString +=
 														'<tr style="color: red;">' +
-														 '<td>' + moment(p.t).format("h:mm a") + '</td>' +
+														 '<td>' + luxon.DateTime.fromSQL(p.t).toFormat("h:mm a") + '</td>' +
 														 '<td>' + p.y + '</td>' +
 														 '<td>' + Number(p.d).toFixed(1) + '</td>' +
 														 '<td>' + Number(p.v).toFixed(1) + '</td>' +
@@ -97,7 +97,7 @@
 													} else {
 															htmlString +=
 															'<tr>' +
-															 '<td>' + moment(p.t).format("h:mm a") + '</td>' +
+															 '<td>' + luxon.DateTime.fromSQL(p.t).toFormat("h:mm a") + '</td>' +
 															 '<td>' + p.y + '</td>' +
 															 '<td>' + Number(p.d).toFixed(1) + '</td>' +
 															 '<td>' + Number(p.v).toFixed(1) + '</td>' +
@@ -107,7 +107,7 @@
 														if (p.kt || p.dt) {
 															htmlString +=
 															'<tr style="background-color: #D5D8DC;color: red;">' +
-															 '<td>' + moment(p.t).format("h:mm a") + '</td>' +
+															 '<td>' + luxon.DateTime.fromSQL(p.t).toFormat("h:mm a") + '</td>' +
 															 '<td>' + p.y + '</td>' +
 															 '<td>' + Number(p.d).toFixed(1) + '</td>' +
 															 '<td>' + Number(p.v).toFixed(1) + '</td>' +
@@ -115,7 +115,7 @@
 														} else {
 																htmlString +=
 																'<tr style="background-color: #D5D8DC;color: #000000;">' +
-																 '<td>' + moment(p.t).format("h:mm a") + '</td>' +
+																 '<td>' + luxon.DateTime.fromSQL(p.t).toFormat("h:mm a") + '</td>' +
 																 '<td>' + p.y + '</td>' +
 																 '<td>' + Number(p.d).toFixed(1) + '</td>' +
 																 '<td>' + Number(p.v).toFixed(1) + '</td>' +
