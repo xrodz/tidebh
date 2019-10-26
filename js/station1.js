@@ -41,7 +41,7 @@
 
 								$.ajax({
 									method: 'GET',
-									url: url_json_hilopredictions.replace(/<<STATIONID>>/g, station1id).replace(/<<BDATE>>/g, getToday()).replace(/<<EDATE>>/g, getTomorrow()),
+									url: url_json_hilopredictions.replace(/<<STATIONID>>/g, station1id).replace(/<<BDATE>>/g, getFirstDayPredictions()).replace(/<<EDATE>>/g, getLastDayPredictions()),
 									success: function (response) {
 										window.predictions = response.predictions.map(function (el) {
 											return {
@@ -51,7 +51,7 @@
 												v: getWaterLevel(el.v, currentSurge),
 												kt: checkKingTide(getWaterLevel(el.v, currentSurge)),
 												dt: checkDryTide(getWaterLevel(el.v, currentSurge)),
-												future: el.t.slice(8,10) - getToday().slice(6)
+												future: el.t.slice(8,10) - getFirstDayPredictions().slice(6)
 											};
 										});
 

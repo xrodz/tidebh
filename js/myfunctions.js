@@ -2,11 +2,11 @@ var getCurrentDate = function () {
 	return luxon.DateTime.local().setZone(stations_timezone);
 }
 
-var getToday = function () {
+var getFirstDayPredictions = function () {
 	return luxon.DateTime.local().setZone(stations_timezone).toFormat("yyyyLLdd");
 }
 
-var getTomorrow = function () {
+var getLastDayPredictions = function () {
 	return luxon.DateTime.local().setZone(stations_timezone).plus({days: 1}).toFormat("yyyyLLdd");
 }
 
