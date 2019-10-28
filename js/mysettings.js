@@ -10,6 +10,7 @@ var station2name = "Lake Wyman"; <!-- ****** station for predictions ****** -->
 var stations_timezone = "America/New_York"; <!-- ****** stations timezone ****** -->
 
 
+
 <!-- ****** JSON latest water level + station name ****** -->
 var url_json_waterlevel = "https://tidesandcurrents.noaa.gov/api/datagetter?product=water_level&application=NOS.COOPS.TAC.WL&date=latest&datum=MLLW&station=<<STATIONID>>&time_zone=lst_ldt&units=english&format=json";
 
@@ -31,12 +32,20 @@ var url_link_tideobservations = "https://docs.google.com/spreadsheets/d/1C4ZcLu-
 
 
 
-<!-- ****** Extreme Tides Warning ****** -->
+<!-- ****** Extreme Tides ****** -->
 var king_tide_warning_limit = 4; <!-- ****** usually 4ft ****** -->
+var king_tide_watch_limit = 3; <!-- ****** usually 3.8ft ****** -->
+var dry_tide_watch_limit = 0.5; <!-- ****** usually <0ft ****** -->
 var dry_tide_warning_limit = -0.5; <!-- ****** usually <-0.5ft ****** -->
+
 var king_tide_warning_text = "King-Tide Warning!";
+var king_tide_watch_text = "King-Tide Watch!";
+var dry_tide_watch_text =  "Dry-Tide Watch!";
 var dry_tide_warning_text =  "Dry-Tide Warning!";
+
 var king_tide_warning_limit_display = "King-Tide Warning: >" + king_tide_warning_limit + "ft";
+var king_tide_watch_limit_display = "King-Tide Watch: >" + king_tide_watch_limit + "ft";
+var dry_tide_watch_limit_display =  "Dry-Tide Watch: <" + dry_tide_watch_limit + "ft";
 var dry_tide_warning_limit_display =  "Dry-Tide Warning: <" + dry_tide_warning_limit + "ft";
 
 

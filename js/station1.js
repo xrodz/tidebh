@@ -49,8 +49,10 @@
 												y: getTideType(el.type),
 												d: el.v,
 												v: getWaterLevel(el.v, currentSurge),
-												kt: checkKingTideWarning(getWaterLevel(el.v, currentSurge)),
-												dt: checkDryTideWarning(getWaterLevel(el.v, currentSurge)),
+												ktwarning: checkKingTideWarning(getWaterLevel(el.v, currentSurge)),
+												ktwatch: checkKingTideWatch(getWaterLevel(el.v, currentSurge)),
+												dtwatch: checkDryTideWatch(getWaterLevel(el.v, currentSurge)),
+												dtwarning: checkDryTideWarning(getWaterLevel(el.v, currentSurge)),
 												future: el.t.slice(8,10) - getFirstDayPredictions().slice(6)
 											};
 										});
@@ -65,6 +67,12 @@
 
 										var kingTideWarning = null;
 										if (checkKingTideWarning(predictions[0].v)) {var kingTideWarning = king_tide_warning_text;}
+
+										var kingTideWatch = null;
+										if (checkKingTideWatch(predictions[0].v)) {var kingTideWatch = king_tide_watch_text;}
+
+										var dryTideWatch = null;
+										if (checkDryTideWatch(predictions[predictions.length-1].v)) {var dryTideWatch = dry_tide_watch_text;}
 
 										var dryTideWarning = null;
 										if (checkDryTideWarning(predictions[predictions.length-1].v)) {var dryTideWarning = dry_tide_warning_text;}
@@ -87,7 +95,7 @@
 												'<tr>';
 											} else {
 												if (p.future) {
-													if (p.kt || p.dt) {
+													if (p.ktwarning || p.dtwarning) {
 														htmlString +=
 														'<tr style="color: red;">' +
 														 '<td>' + formatTimeStamp(p.t) + '</td>' +
@@ -105,7 +113,7 @@
 															'<tr>';
 													}
 												} else {
-														if (p.kt || p.dt) {
+														if (p.ktwarning || p.dtwarning) {
 															htmlString +=
 															'<tr style="background-color: #D5D8DC;color: red;">' +
 															 '<td>' + formatTimeStamp(p.t) + '</td>' +
@@ -136,6 +144,8 @@
 										$('#station1 tbody').html(htmlString);
 
 										$('#kingTideWarning1').text(kingTideWarning);
+										$('#kingTideWatch1').text(kingTideWatch);
+										$('#dryTideWatch1').text(dryTideWatch);
 										$('#dryTideWarning1').text(dryTideWarning);
 									}
 								});

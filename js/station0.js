@@ -38,6 +38,8 @@
 						$('#current-surge').text((currentSurge).toFixed(1));
 						
 						$('#kingTideWarningLevel').text(king_tide_warning_limit_display);
+						$('#kingTideWatchLevel').text(king_tide_watch_limit_display);
+						$('#dryTideWatchLevel').text(dry_tide_watch_limit_display);
 						$('#dryTideWarningLevel').text(dry_tide_warning_limit_display);
 						
 						$('#current-date').text(getCurrentDate().toFormat("ccc, LLL d, yyyy (ZZZZ)"));
