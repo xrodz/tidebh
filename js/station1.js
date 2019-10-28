@@ -34,6 +34,7 @@
 									currentWaterLevel = getWaterLevel(v3, currentSurge),
 									currentPrediction = {
 										t: currentTime,
+										y: "NOW",
 										d: v3,
 										v: currentWaterLevel,
 										current: true
@@ -89,7 +90,7 @@
 												htmlString +=
 												'<tr style="font-weight: bold;background-color: #2e96d3;color: #ffffff;">' +
 												 '<td>' + formatTimeStamp(p.t) + '</td>' +
-												 '<td>NOW</td>' +
+												 '<td>' + p.y + '</td>' +
 												 '<td>' + Number(p.d).toFixed(1) + '</td>' +
 												 '<td>' + Number(p.v).toFixed(1) + '</td>' +
 												'<tr>';
