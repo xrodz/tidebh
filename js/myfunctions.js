@@ -36,14 +36,14 @@ var getTideType = function (type) {
 	if (type === "H") return "HIGH";
 }
 
-var checkKingTide = function (level) {
-	if (level >= king_tide_min) return 1;
-	if (level < king_tide_min) return 0;
+var checkKingTideWarning = function (level) {
+	if (level >= king_tide_warning_limit) return 1;
+	if (level < king_tide_warning_limit) return 0;
 }
 
-var checkDryTide = function (level) {
-	if (level <= dry_tide_max) return 1;
-	if (level > dry_tide_max) return 0;
+var checkDryTideWarning = function (level) {
+	if (level <= dry_tide_warning_limit) return 1;
+	if (level > dry_tide_warning_limit) return 0;
 }
 
 function surgeHelper() {

@@ -49,8 +49,8 @@
 												y: getTideType(el.type),
 												d: el.v,
 												v: getWaterLevel(el.v, currentSurge),
-												kt: checkKingTide(getWaterLevel(el.v, currentSurge)),
-												dt: checkDryTide(getWaterLevel(el.v, currentSurge)),
+												kt: checkKingTideWarning(getWaterLevel(el.v, currentSurge)),
+												dt: checkDryTideWarning(getWaterLevel(el.v, currentSurge)),
 												future: el.t.slice(8,10) - getFirstDayPredictions().slice(6)
 											};
 										});
@@ -64,10 +64,10 @@
 										});
 
 										var kingTideWarning = null;
-										if (checkKingTide(predictions[0].v)) {var kingTideWarning = king_tide_warning_text;}
+										if (checkKingTideWarning(predictions[0].v)) {var kingTideWarning = king_tide_warning_text;}
 
 										var dryTideWarning = null;
-										if (checkDryTide(predictions[predictions.length-1].v)) {var dryTideWarning = dry_tide_warning_text;}
+										if (checkDryTideWarning(predictions[predictions.length-1].v)) {var dryTideWarning = dry_tide_warning_text;}
 
 										predictions.sort(function (a, b) {
 											if (a.t < b.t) return -1;
