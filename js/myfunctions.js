@@ -76,7 +76,7 @@ var nextdays_normal = '';
 var nextdays_watch = 'style="color: #FF8C00;"';
 var nextdays_warning = 'style="color: red;"';			
 
-var getLineStyle = function (time, value, currentSurge) {
+var getLineStyle1 = function (time, value, currentSurge) {
 	if (time.slice(8,10) - getFirstDayPredictions().slice(6) === 0) {
 		if (checkKingTideWarning(getWaterLevel(value, currentSurge)) || checkDryTideWarning(getWaterLevel(value, currentSurge))) {
 			return firstday_warning;
@@ -97,6 +97,14 @@ var getLineStyle = function (time, value, currentSurge) {
 				return nextdays_normal;				
 			}
 		}
+	}
+}
+
+var getLineStyle2 = function (time, value, currentSurge) {
+	if (time.slice(8,10) - getFirstDayPredictions().slice(6) === 0) {
+		return firstday_normal;				
+	} else {
+		return nextdays_normal;				
 	}
 }
 

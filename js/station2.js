@@ -50,7 +50,7 @@
 												y: getTideType(el.type),
 												d: el.v,
 												v: getWaterLevel(el.v, currentSurge),
-												lineStyle: getLineStyle(el.t, el.v, currentSurge)
+												lineStyle: getLineStyle2(el.t, el.v, currentSurge)
 											};
 										});
 
@@ -99,11 +99,6 @@
 										document.getElementById("tideobservations2url").setAttribute("href",url_link_tideobservations);					
 
 										$('#station2 tbody').html(htmlString);
-										
-										$('#kingTideWarning2').text(kingTideWarning);
-										$('#kingTideWatch2').text(kingTideWatch);
-										$('#dryTideWatch2').text(dryTideWatch);
-										$('#dryTideWarning2').text(dryTideWarning);
 									}
 								});
 							}

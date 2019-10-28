@@ -50,7 +50,7 @@
 												y: getTideType(el.type),
 												d: el.v,
 												v: getWaterLevel(el.v, currentSurge),
-												lineStyle: getLineStyle(el.t, el.v, currentSurge)
+												lineStyle: getLineStyle1(el.t, el.v, currentSurge)
 											};
 										});
 
