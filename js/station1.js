@@ -37,7 +37,7 @@
 										y: "NOW",
 										d: v3,
 										v: currentWaterLevel,
-										current: true
+										lineStyle: now
 									};
 
 								$.ajax({
@@ -50,11 +50,7 @@
 												y: getTideType(el.type),
 												d: el.v,
 												v: getWaterLevel(el.v, currentSurge),
-												ktwarning: checkKingTideWarning(getWaterLevel(el.v, currentSurge)),
-												ktwatch: checkKingTideWatch(getWaterLevel(el.v, currentSurge)),
-												dtwatch: checkDryTideWatch(getWaterLevel(el.v, currentSurge)),
-												dtwarning: checkDryTideWarning(getWaterLevel(el.v, currentSurge)),
-												future: el.t.slice(8,10) - getFirstDayPredictions().slice(6)
+												lineStyle: getLineStyle(el.t, el.v, currentSurge)
 											};
 										});
 
@@ -86,53 +82,13 @@
 																				
 										var htmlString = '';
 										predictions.forEach(function (p) {
-											if (p.current) {
-												htmlString +=
-												'<tr style="font-weight: bold;background-color: #2e96d3;color: #ffffff;">' +
-												 '<td>' + formatTimeStamp(p.t) + '</td>' +
-												 '<td>' + p.y + '</td>' +
-												 '<td>' + Number(p.d).toFixed(1) + '</td>' +
-												 '<td>' + Number(p.v).toFixed(1) + '</td>' +
-												'<tr>';
-											} else {
-												if (p.future) {
-													if (p.ktwarning || p.dtwarning) {
-														htmlString +=
-														'<tr style="color: red;">' +
-														 '<td>' + formatTimeStamp(p.t) + '</td>' +
-														 '<td>' + p.y + '</td>' +
-														 '<td>' + Number(p.d).toFixed(1) + '</td>' +
-														 '<td>' + Number(p.v).toFixed(1) + '</td>' +
-														'<tr>';
-													} else {
-															htmlString +=
-															'<tr>' +
-															 '<td>' + formatTimeStamp(p.t) + '</td>' +
-															 '<td>' + p.y + '</td>' +
-															 '<td>' + Number(p.d).toFixed(1) + '</td>' +
-															 '<td>' + Number(p.v).toFixed(1) + '</td>' +
-															'<tr>';
-													}
-												} else {
-														if (p.ktwarning || p.dtwarning) {
-															htmlString +=
-															'<tr style="background-color: #D5D8DC;color: red;">' +
-															 '<td>' + formatTimeStamp(p.t) + '</td>' +
-															 '<td>' + p.y + '</td>' +
-															 '<td>' + Number(p.d).toFixed(1) + '</td>' +
-															 '<td>' + Number(p.v).toFixed(1) + '</td>' +
-															'<tr>';
-														} else {
-																htmlString +=
-																'<tr style="background-color: #D5D8DC;color: #000000;">' +
-																 '<td>' + formatTimeStamp(p.t) + '</td>' +
-																 '<td>' + p.y + '</td>' +
-																 '<td>' + Number(p.d).toFixed(1) + '</td>' +
-																 '<td>' + Number(p.v).toFixed(1) + '</td>' +
-																'<tr>';
-														}
-												}
-											}
+											htmlString +=
+											'<tr ' + p.lineStyle + '>' +
+											 '<td>' + formatTimeStamp(p.t) + '</td>' +
+											 '<td>' + p.y + '</td>' +
+											 '<td>' + Number(p.d).toFixed(1) + '</td>' +
+											 '<td>' + Number(p.v).toFixed(1) + '</td>' +
+											'<tr>';
 										});
 										
 										var url_link_station = url_link_station_tidepredictions.replace(/<<STATIONID>>/g, station1id).replace(/<<BDATE>>/g, getStartOfMonth()).replace(/<<EDATE>>/g, getEndOfMonth());
