@@ -57,24 +57,6 @@
 										predictions.push(currentPrediction);
 
 										predictions.sort(function (a, b) {
-											if (a.v > b.v) return -1;
-											if (a.v < b.v) return 1;
-											return 0;
-										});
-
-										var kingTideWarning = null;
-										if (checkKingTideWarning(predictions[0].v)) {var kingTideWarning = king_tide_warning_text;}
-
-										var kingTideWatch = null;
-										if (checkKingTideWatch(predictions[0].v)) {var kingTideWatch = king_tide_watch_text;}
-
-										var dryTideWatch = null;
-										if (checkDryTideWatch(predictions[predictions.length-1].v)) {var dryTideWatch = dry_tide_watch_text;}
-
-										var dryTideWarning = null;
-										if (checkDryTideWarning(predictions[predictions.length-1].v)) {var dryTideWarning = dry_tide_warning_text;}
-
-										predictions.sort(function (a, b) {
 											if (a.t < b.t) return -1;
 											if (a.t > b.t) return 1;
 											return 0;
@@ -100,10 +82,36 @@
 
 										$('#station1 tbody').html(htmlString);
 
+
+										<!-- ****** extreme-tide alerts ****** -->
+										for( var i = 0; i < predictions.length; i++){
+										   if ( predictions[i].t <= currentTime) {
+										     predictions.splice(i, 1); 
+										     i--;
+										   }
+										}
+
+										predictions.sort(function (a, b) {
+											return b.v - a.v;
+										});
+
+										var kingTideWarning = null;
+										if (checkKingTideWarning(predictions[0].v)) {var kingTideWarning = king_tide_warning_text;}
+
+										var kingTideWatch = null;
+										if (checkKingTideWatch(predictions[0].v)) {var kingTideWatch = king_tide_watch_text;}
+
+										var dryTideWatch = null;
+										if (checkDryTideWatch(predictions[predictions.length-1].v)) {var dryTideWatch = dry_tide_watch_text;}
+
+										var dryTideWarning = null;
+										if (checkDryTideWarning(predictions[predictions.length-1].v)) {var dryTideWarning = dry_tide_warning_text;}
+
 										$('#kingTideWarning1').text(kingTideWarning);
 										$('#kingTideWatch1').text(kingTideWatch);
 										$('#dryTideWatch1').text(dryTideWatch);
 										$('#dryTideWarning1').text(dryTideWarning);
+										
 									}
 								});
 							}
