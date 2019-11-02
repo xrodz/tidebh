@@ -37,35 +37,19 @@ var getTideType = function (type) {
 }
 
 var checkKingTideWarning = function (level) {
-	if (level >= king_tide_warning_limit) {
-		return 1;
-	} else {
-		return 0;
-	}
+	if (level >= king_tide_warning_limit) {return 1;} else {return 0;}
 }
 
 var checkKingTideWatch = function (level) {
-	if (level >= king_tide_watch_limit && level < king_tide_warning_limit) {
-		return 1;
-	} else {
-		return 0;
-	}
+	if (level >= king_tide_watch_limit && level < king_tide_warning_limit) {return 1;} else {return 0;}
 }
 
 var checkDryTideWatch = function (level) {
-	if (level <= dry_tide_watch_limit && level > dry_tide_warning_limit) {
-		return 1;
-	} else {
-		return 0;
-	}
+	if (level <= dry_tide_watch_limit && level > dry_tide_warning_limit) {return 1;} else {return 0;}
 }
 
 var checkDryTideWarning = function (level) {
-	if (level <= dry_tide_warning_limit) {
-		return 1;
-	} else {
-		return 0;
-	}
+	if (level <= dry_tide_warning_limit) {return 1;} else {return 0;}
 }
 
 var now = 'style="font-weight: bold;background-color: #2e96d3;color: white;"';

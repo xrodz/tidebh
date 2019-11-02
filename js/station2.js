@@ -1,8 +1,8 @@
 (function ($) {
 	$(document).ready(function () {
 
-		var t1, v1, v2, t3, v3;
-		t1 = v1 = v2 = t3 = v3 = null;
+		var t1, v1, v2, t3, v3, direction;
+		t1 = v1 = v2 = t3 = v3 = direction = null;
 
 		$.ajax({
 			method: 'GET',
@@ -29,12 +29,15 @@
 								t3 = prediction.t;
 								v3 = prediction.v;
 
+								var prediction_pre = response.predictions.pop();
+								if (prediction.v - prediction_pre.v > 0) {direction = "&uarr;&uarr;&uarr;"} else {direction = "&darr;&darr;&darr;"};
+
 								var currentSurge = v1 - v2,
 									currentTime = t3,
 									currentWaterLevel = getWaterLevel(v3, currentSurge),
 									currentPrediction = {
 										t: currentTime,
-										y: "NOW",
+										y: direction,
 										d: v3,
 										v: currentWaterLevel,
 										lineStyle: now
