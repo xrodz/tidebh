@@ -1,15 +1,18 @@
 1) Get variables “t.JSON_01” and “v.JSON_01” from the JSON_01 below:
+var url_json_waterlevel
 https://tidesandcurrents.noaa.gov/api/datagetter?product=water_level&application=NOS.COOPS.TAC.WL&date=latest&datum=MLLW&station=8722670&time_zone=lst_ldt&units=english&format=json
 
 2) Get variable “v.JSON_02” from the JSON_02 below where “t.JSON_02” equals “t.JSON_01”:
-https://tidesandcurrents.noaa.gov/api/datagetter?product=predictions&application=NOS.COOPS.TAC.WL&date=latest&datum=MLLW&station=8722670&time_zone=lst_ldt&units=english&format=json
+var url_json_tidepredictions
+https://tidesandcurrents.noaa.gov/api/datagetter?product=predictions&application=NOS.COOPS.TAC.WL&date=latest&datum=MLLW&station=8722670&time_zone=lst_ldt&units=english&format=json&interval=1
 
 3) Get variable “v.JSON_03” from the JSON_03 below where “t.JSON_03” is the latest:
+var url_json_tidepredictions
 https://tidesandcurrents.noaa.gov/api/datagetter?product=predictions&application=NOS.COOPS.TAC.WL&date=latest&datum=MLLW&station=8722669&time_zone=lst_ldt&units=english&format=json&interval=1
 
 4) Get all “v” variables from the JSON_04 below replacing dates with TODAY() and TOMORROW():
+var url_json_hilopredictions
 https://tidesandcurrents.noaa.gov/api/datagetter?product=predictions&application=NOS.COOPS.TAC.WL&begin_date=20191017&end_date=20191018&datum=MLLW&station=8722669&time_zone=lst_ldt&units=english&format=json&interval=hilo
-
 
 
 5) Display:
