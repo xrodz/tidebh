@@ -29,6 +29,9 @@
 								t3 = prediction.t;
 								v3 = prediction.v;
 
+								response.predictions.pop();
+								response.predictions.pop();
+								response.predictions.pop();
 								var prediction_pre = response.predictions.pop();
 								if (prediction.v - prediction_pre.v > 0) {direction = "&uarr;&uarr;&uarr;"} else {direction = "&darr;&darr;&darr;"};
 
