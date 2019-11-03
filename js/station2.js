@@ -33,8 +33,8 @@
 								response.predictions.pop();
 								response.predictions.pop();
 								var prediction_pre = response.predictions.pop();
-								if (prediction.v - prediction_pre.v > 0) {direction = "&uarr;&uarr;&uarr;"} else {direction = "&darr;&darr;&darr;"};
-
+								if (prediction.v - prediction_pre.v > 0) {direction = "&uarr;&uarr;&uarr;"} else {if (prediction.v - prediction_pre.v < 0) {direction = "&darr;&darr;&darr;"} else {direction = "---"};};
+								
 								var currentSurge = v1 - v2,
 									currentTime = t3,
 									currentWaterLevel = getWaterLevel(v3, currentSurge),
