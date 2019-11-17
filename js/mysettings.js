@@ -33,10 +33,10 @@ var url_link_tideobservations = "https://docs.google.com/spreadsheets/d/1C4ZcLu-
 
 
 <!-- ****** Extreme Tides ****** -->
-var king_tide_warning_limit = 4.2; <!-- ****** usually 4.2ft ****** -->
-var king_tide_watch_limit = 3.8; <!-- ****** usually 3.8ft ****** -->
+var king_tide_warning_limit = 4.5; <!-- ****** usually 4.5ft ****** -->
+var king_tide_watch_limit = 4; <!-- ****** usually 4ft ****** -->
 var dry_tide_watch_limit = -0; <!-- ****** usually <-0ft ****** -->
-var dry_tide_warning_limit = -0.4; <!-- ****** usually <-0.4ft ****** -->
+var dry_tide_warning_limit = -0.5; <!-- ****** usually <-0.5ft ****** -->
 
 var king_tide_warning_text = "King-Tide Warning!";
 var king_tide_watch_text = "King-Tide Watch!";
