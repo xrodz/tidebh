@@ -12,13 +12,13 @@ var stations_timezone = "America/New_York"; <!-- ****** stations timezone ******
 
 
 <!-- ****** JSON latest water level + station name ****** -->
-var url_json_waterlevel = "https://tidesandcurrents.noaa.gov/api/datagetter?product=water_level&application=NOS.COOPS.TAC.WL&date=latest&datum=MLLW&station=<<STATIONID>>&time_zone=lst_ldt&units=english&format=json";
+var url_json_waterlevel = "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=water_level&application=NOS.COOPS.TAC.WL&date=latest&datum=MLLW&station=<<STATIONID>>&time_zone=lst_ldt&units=english&format=json";
 
 <!-- ****** JSON latest tide predictions ****** -->
-var url_json_tidepredictions = "https://tidesandcurrents.noaa.gov/api/datagetter?product=predictions&application=NOS.COOPS.TAC.WL&date=latest&datum=MLLW&station=<<STATIONID>>&time_zone=lst_ldt&units=english&format=json&interval=1";
+var url_json_tidepredictions = "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=predictions&application=NOS.COOPS.TAC.WL&date=latest&datum=MLLW&station=<<STATIONID>>&time_zone=lst_ldt&units=english&format=json&interval=1";
 
 <!-- ****** JSON date range hi-lo tide predictions ****** -->
-var url_json_hilopredictions = "https://tidesandcurrents.noaa.gov/api/datagetter?product=predictions&application=NOS.COOPS.TAC.WL&begin_date=<<BDATE>>&end_date=<<EDATE>>&datum=MLLW&station=<<STATIONID>>&time_zone=lst_ldt&units=english&format=json&interval=hilo";
+var url_json_hilopredictions = "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=predictions&application=NOS.COOPS.TAC.WL&begin_date=<<BDATE>>&end_date=<<EDATE>>&datum=MLLW&station=<<STATIONID>>&time_zone=lst_ldt&units=english&format=json&interval=hilo";
 
 
 <!-- ****** LINK station water levels ****** -->
