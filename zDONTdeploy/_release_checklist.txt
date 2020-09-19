@@ -14,7 +14,7 @@ DEPLOY
 - copy new release files to new folder
 - remove oldest version folder
 
-- update domain pointer @godaddy
+- update domain pointer @godaddy (document root for subdomain)
 https://a2plcpnl0023.prod.iad2.secureserver.net:2083/cpsess6723017102/frontend/paper_lantern/index.html?login=1&post_login=671331446373
 
 - check DNS refresh
