@@ -1,5 +1,6 @@
 # TideBH
-![alt text](https://github.com/xrodz/myapp_tidebh/blob/master/favicon/favicon-160.png "TideBH")
+
+![alt text](/favicon/favicon-160.png "TideBH")
 
 TideBH is an app that retrieves the Current Surge from the NOAA real-time tide station in Florida, adds this value to the Tide Prediction and display those short term water levels.
 
@@ -8,11 +9,8 @@ Surge is the water level difference from predictions calculated by the moon and 
 You can customize this app to the location you need monitoring by changing the Tide Stations ids and names on the file mysettings.js
 
 Find the working app here:
-http://tidebh.kaynuy.com
-
+<http://tidebh.kaynuy.com>
 
 Enjoy!
 
 xrodz
-
-#createsharehavefun
