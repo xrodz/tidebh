@@ -9,6 +9,7 @@
 			url: url_link_latest_release,
 			success: function (response) {
 				release = response.tag_name;
+				$('#current-release').text(release);
 			}
 		});
 
@@ -44,7 +45,6 @@
 						
 						$('#current-date').text(getCurrentDate().toFormat("ccc, LLL d, yyyy (ZZZZ)"));
 						$('#current-year').text(getCurrentDate().toFormat("yyyy"));
-						$('#current-release').text(release);
 					}
 				});
 			}
